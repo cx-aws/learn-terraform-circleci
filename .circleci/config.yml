@@ -90,9 +90,9 @@ workflows:
   plan_approve_apply:
     jobs:
       - validate
-      - unit-test
-          requires: validate       
-      - plan-apply
+      - unit-test:
+          requires: validate
+      - plan-apply:
           requires: unit-test
       - hold-apply:
           type: approval
