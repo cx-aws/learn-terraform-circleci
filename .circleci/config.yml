@@ -29,9 +29,9 @@ jobs:
              export TERRAFORM_VERSION=1.1.4
              wget -O /tmp/terraform.zip https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip
              mkdir -p tf_bin
-             unzip /tmp/terraform.zip -d . && rm /tmp/terraform.zip
+             sudo unzip /tmp/terraform.zip -d /usr/local/bin/ && rm /tmp/terraform.zip
              export PATH=$PATH:./tf_bin
-             terraform version          
+             terraform version
              cd test
              go version
              go mod tidy
