@@ -91,9 +91,11 @@ workflows:
     jobs:
       - validate
       - unit-test:
-          requires: validate
+          requires:
+            - validate
       - plan-apply:
-          requires: unit-test
+          requires:
+            - unit-test
       - hold-apply:
           type: approval
           requires:
