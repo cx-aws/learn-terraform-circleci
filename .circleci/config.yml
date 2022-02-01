@@ -11,6 +11,7 @@ jobs:
       - run:
           name: terraform validate
           command: |
+            terraform init -input=false
             terraform validate
       - persist_to_workspace:
           root: .
