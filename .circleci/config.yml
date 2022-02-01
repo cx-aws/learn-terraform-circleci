@@ -20,7 +20,7 @@ jobs:
   unit-test:
     working_directory: /tmp/project
     docker:
-      - image: docker.mirror.hashicorp.services/hashicorp/terraform:full
+      - image: hashicorp/terraform:full
     steps:
       - checkout
       - run:
