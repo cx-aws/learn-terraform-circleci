@@ -20,12 +20,15 @@ jobs:
   unit-test:
     working_directory: /tmp/project
     docker:
-      - image: docker.mirror.hashicorp.services/hashicorp/terraform:latest
+      - image: cimg/go:1.17.6
     steps:
       - checkout
       - run:
           name: unit test      
           command: |
+             export TERRAFORM_VERSION=1.11.4
+             wget https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip /tmp/terraform.zip
+             unzip /tmp/terraform.zip -d /usr/local/bin/ && rm /tmp/terraform.zip          
              cd test
              go version
              go mod tidy
