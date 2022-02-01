@@ -24,11 +24,12 @@ jobs:
     steps:
       - checkout
       - run:
-          name: unit test
+          name: unit test      
           command: |
-            - cd test
-            - go mod tidy
-            - go test -v s3_upload_test.go
+             cd test
+             go version
+             go mod tidy
+             go test -v s3_upload_test.go
   plan-apply:
     working_directory: /tmp/project
     docker:
