@@ -20,7 +20,7 @@ jobs:
   unit-test:
     working_directory: /tmp/project
     docker:
-      - image: hashicorp/terraform:full
+      - image: cimg/go:1.17.6
     steps:
       - checkout
       - run:
