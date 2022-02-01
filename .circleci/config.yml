@@ -20,7 +20,7 @@ jobs:
   unit-test:
     working_directory: /tmp/project
     docker:
-      - image: cimg/go:1.17.6
+      - image: docker.mirror.hashicorp.services/hashicorp/terraform:latest
     steps:
       - checkout
       - run:
